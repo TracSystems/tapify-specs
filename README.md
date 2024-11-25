@@ -1,4 +1,4 @@
-# TAP Introduction (Whitepaper)
+# Tapify Introduction (Whitepaper)
 TAP is an extendible OrdFi-enabling protocol that includes - but is not limited to - the TAP token standard.
 
 TAP works entirely without the use of L2s, but utilizes tapping - a simple mechanism to verify transactions within the protocol.
@@ -19,7 +19,7 @@ To get connected to TAP, marketplaces/wallets clone their existing BRC-20 infras
 
 Users benefit from features such as token staking and swaps. Mass-sending of tokens are already available. The community will decide through the use of $TRAC (BRC-20) which features will be added or updated.
 
-Alongside the specs, there is already TAP protocol tracking available on https://trac.network. 
+Alongside the specs, there is already Tapify tracking available on https://trac.network. 
 
 Trac's public endpoint (https://github.com/BennyTheDev/trac-tap-public-endpoint) allows developers to embrace the new standard. After the official release of Trac, developers may self-host TAP tracking and create their own endpoints.
 
@@ -39,7 +39,7 @@ As mentioned above, TAP tokens work in the exact same way as BRC-20 tokens. Ther
 
 #### Ord Wallet Versioning
 
-The TAP Protocol follows a defined upgrade path for indexers to support and benefit from ord wallet updates. Ord wallet upgrades are followed conservatively.
+Tapify follows a defined upgrade path for indexers to support and benefit from ord wallet updates. Ord wallet upgrades are followed conservatively.
 This means that the protocol won't support every single release of the ord wallet but only important and beneficial updates. 
 Supported updates will be tested and announced in advance, with a reasonable time to allow indexers to be prepared.
 
@@ -304,7 +304,7 @@ Example:
 }
 ```
 
-- The "auth" attribute must contain an array of deployed TAP protocol tokens that are verified for the authority's account.
+- The "auth" attribute must contain an array of deployed Tapify tokens that are verified for the authority's account.
 - If the "auth" attribute's array is empty, all tokens owned by the authority's account are authorized [added Sep. 25th, 2023]
 - Upon indexing, the token-auth inscription must be verified against the signature ("sig"), "hash" attribute and public key.
 - - The public key must be recovered by using "hash".
@@ -414,7 +414,7 @@ If there is no valid authority at the given inscription id for "prv", the deploy
 
 The authority still has to respect all given rules as of the deployment inscription. It cannot override limits, max supply, tickers.
 
-Example for regular token deploys on the TAP Protocol:
+Example for regular token deploys on Tapify:
 
 ```javascript
 { 
@@ -427,7 +427,7 @@ Example for regular token deploys on the TAP Protocol:
 }
 ```
 
-Example for DMT token deploys on the TAP Protocol:
+Example for DMT token deploys on Tapify:
 
 ```javascript
 {
@@ -454,7 +454,7 @@ If the the resulting keys do not match, or the signature is invalid, the mint wi
 
 If any other address other than the one given tries to mint, the mint will fail and the authority has to re-issue a signed inscription with a new salt since hashes are unique across the protocol.
 
-Example mint inscription text on the TAP Protocol:
+Example mint inscription text on the Tapify:
 
 ```javascript
 {
@@ -475,7 +475,7 @@ Example mint inscription text on the TAP Protocol:
 }
 ```
 
-Example DMT mint inscription text on the TAP Protocol:
+Example DMT mint inscription text on Tapify:
 
 ```javascript
 {
@@ -560,20 +560,20 @@ No mints, transfers or any other function is allowed to be performed on them.
 Each deployment must contain a "prv" field with the inscription id 'c14d3de97cecc573d86592240ef38bf5ba298c8c2eaf68e17b99dbbeedbab7e4i0'.
 This inscription id represents a system privilege-authority that - once enabled - will allow for minting of the deployed BRC-20 tickers as of the privilege-authority specs above.
 
-Once the authority enabled minting, the BRC-20 tickers will be available for transfers (internal/external) like any other tokens as of the TAP Protocol specs.
+Once the authority enabled minting, the BRC-20 tickers will be available for transfers (internal/external) like any other tokens as of the Tapify specs.
 
 #### Bitmap
 
-The TAP Protocol indexer must properly index Bitmap as of the original specs, without cursed support.
+The Tapify indexer must properly index Bitmap as of the original specs, without cursed support.
 
 #### DMT (Digital Matter Theory) Tokens
 
-TAP Protocol supports elements field 4 (block height), 10 (nonce) and 11 (bits) as of the DMT specs located at https://digital-matter-theory.gitbook.io/digital-matter-theory/introduction/digital-matter-theory
+Tapify supports elements field 4 (block height), 10 (nonce) and 11 (bits) as of the DMT specs located at https://digital-matter-theory.gitbook.io/digital-matter-theory/introduction/digital-matter-theory
 
-This includes the functions "dmt-deploy" and "dmt-mint" and work according to the DMT specs within the TAP Protocol.
+This includes the functions "dmt-deploy" and "dmt-mint" and work according to the DMT specs within Tapify.
 
 From Bitcoin block 861,576 onwards, Blockdrops for DMT UNats and Bitmaps are supported.
 
 #### Outlook
 
-This document and the tracking for the TAP protocol will be continuously worked on and updated. Feel free to join the Discord if you have questions: https://discord.gg/sPyYDa5q6P
+This document and the tracking for the Tapify will be continuously worked on and updated. Feel free to join the Discord if you have questions: https://discord.gg/sPyYDa5q6P
